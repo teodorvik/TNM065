@@ -1,0 +1,26 @@
+<!ENTITY % date "year, month, day">
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT month (#PCDATA)>
+<!ELEMENT day (#PCDATA)>
+
+<!ELEMENT catalog (books, articles)>
+<!ATTLIST catalog title CDATA #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT books (book+)>
+<!ELEMENT book (author*, title, type?, price, publish_date, shelfplacement?, description?, link?)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT type EMPTY>
+<!ATTLIST type genre (Computer|Fantasy|Romance|Horror|ScienceFiction|Other) #IMPLIED>
+<!ELEMENT price EMPTY>
+<!ATTLIST price unit CDATA #IMPLIED>
+<!ELEMENT publish_date (%date;)>
+<!ELEMENT shelfplacement (id+)>
+<!ELEMENT id EMPTY>
+<!ATTLIST id sameshelf (yes|no) #REQUIRED>
+<!ATTLIST id id IDREF #REQUIRED>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+
+<!ELEMENT articles (article*)>
+<!ELEMENT article (author+, year?, link?, title)>
