@@ -1,0 +1,11 @@
+<!ENTITY ouml "&#246;"> 
+<!ENTITY Ouml "&#214;"> 
+<!ENTITY brkbar "&#166;">
+<!ENTITY ccedil "&#231;">
+
+<!ELEMENT movies (movie*)>
+<!ELEMENT movie (title, year?, review?, genre?)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT review (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
